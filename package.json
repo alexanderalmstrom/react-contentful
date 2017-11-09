@@ -1,7 +1,7 @@
 {
   "name": "react-contentful",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --watch --config webpack.config.js --progress",
