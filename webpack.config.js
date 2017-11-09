@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
 	entry: {
 		app: [
-    	'react-hot-loader/patch',
+			'react-hot-loader/patch',
 			'./src/app.js'
 		]
 	},
