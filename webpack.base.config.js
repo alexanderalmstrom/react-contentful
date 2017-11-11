@@ -1,10 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 
-module.exports = {
+const env = process.env.NODE_ENV
+
+const baseConfig = {
 	entry: {
 		app: [
-			'react-hot-loader/patch',
 			'./src/index.js'
 		]
 	},
@@ -43,3 +44,9 @@ module.exports = {
 		})
 	]
 }
+
+if (env == 'development') {
+	baseConfig.entry.app.unshift('react-hot-loader/patch')
+}
+
+module.exports = baseConfig
