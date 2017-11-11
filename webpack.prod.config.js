@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./webpack.base.config.js')
 
@@ -28,7 +29,7 @@ module.exports = merge(baseConfig, {
 	plugins: [
 		new CleanWebpackPlugin(['build']),
 		new ExtractTextPlugin({
-			filename: '[name].bundle.css'
+			filename: '[name].css'
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: false,
@@ -38,6 +39,12 @@ module.exports = merge(baseConfig, {
 			output: {
 				comments: false
 			}
+		}),
+		new HtmlWebpackPlugin({
+			template: 'index.html',
+			filename: 'index.html',
+			inject: false,
+			hash: true
 		})
 	]
 })
