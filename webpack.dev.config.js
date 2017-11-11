@@ -35,6 +35,8 @@ module.exports = merge(baseConfig, {
 		]
 	},
 	plugins: [
-		new webpack.NoEmitOnErrorsPlugin()
+		new webpack.NoEmitOnErrorsPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin()
 	]
 })
