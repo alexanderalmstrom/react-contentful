@@ -10,7 +10,7 @@ import './Post.scss'
 
 class Posts extends Component {
 	componentWillMount () {
-		this.props.loadEntries( { contentTypeId: 'post' } )
+		this.props.loadPosts()
 	}
 
 	render () {
@@ -19,7 +19,7 @@ class Posts extends Component {
 					{
 						Object.keys(this.props.posts.entries).map(slug => {
 							return (
-								<div key={slug} className="feature">
+								<div key={slug}>
 									<Feature entry={this.props.posts.entries[slug]}></Feature>
 								</div>
 							)
@@ -32,8 +32,9 @@ class Posts extends Component {
 
 Posts.propTypes = {
 	app: PropTypes.object,
+	contentType: PropTypes.string,
 	posts: PropTypes.object,
-	loadEntries: PropTypes.func
+	loadPosts: PropTypes.func
 }
 
 export default connectComponent(Posts)

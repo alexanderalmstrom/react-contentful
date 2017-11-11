@@ -1,4 +1,4 @@
-import * as entryService from '../services/entryStore'
+import * as postService from '../services/postService'
 
 export function setAppClientState (authState) {
   return {
@@ -7,19 +7,19 @@ export function setAppClientState (authState) {
   }
 }
 
-export function loadEntries ({ contentTypeId }) {
+export function loadPosts () {
   return {
     type: 'LOAD_POSTS',
-    payload: entryService.loadEntries(contentTypeId)
+    payload: postService.loadPosts()
   }
 }
 
-export function loadEntry (id) {
+export function loadPost (slug) {
   return {
     type: 'LOAD_POST',
-    payload: entryService.loadEntry(id),
+    payload: postService.loadPost(slug),
     meta: {
-      id
+      slug
     }
   }
 }

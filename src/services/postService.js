@@ -1,19 +1,19 @@
 import { getClient } from './contentfulClient'
 
-export function loadEntries (contentTypeId, include = 1) {
+export function loadPosts () {
 	return getClient().getEntries({
-		'content_type': contentTypeId,
-		'include': include
+		'content_type': 'post',
+		'include': 1
 	}).then(payload => {
 		return payload.items
 	})
 }
 
-export function loadEntry (contentTypeId, slug, include = 1) {
+export function loadPost (slug) {
 	return getClient().getEntries({
-		'content_type': contentTypeId,
+		'content_type': 'post',
 		'fields.slug': slug,
-		'include': include
+		'include': 1
 	}).then(payload => {
 		if (!payload.items.length) {
 			throw new Error('Entry not found')

@@ -7,8 +7,8 @@ import { connectComponent } from '../connect'
 import './Post.scss'
 
 class Post extends Component {
-	componentWillMount () {
-		this.props.loadEntry('post', this.props.match.slug)
+	componentDidMount () {
+		this.props.loadPost(this.props.match.params.slug)
 	}
 
 	renderPost (post) {
@@ -38,7 +38,7 @@ class Post extends Component {
 Post.propTypes = {
 	app: PropTypes.object,
 	posts: PropTypes.object,
-	loadEntry: PropTypes.func,
+	loadPost: PropTypes.func,
 	params: PropTypes.object
 }
 

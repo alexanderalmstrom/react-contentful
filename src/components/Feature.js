@@ -7,7 +7,7 @@ import './Feature.scss'
 function Feature ({ entry }) {
 	if (entry && entry.fields && entry.fields.image) {
 		return (
-			<div>
+			<div className="feature">
 				<Link to={`/${entry.fields.slug}`}>
 					<img src={entry.fields.image.fields.file.url}
 						alt={entry.fields.image.fields.title} />

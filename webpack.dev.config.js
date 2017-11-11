@@ -10,7 +10,8 @@ module.exports = merge(baseConfig, {
 		watchContentBase: true,
 		hot: true,
 		port: 3000,
-		historyApiFallback: true
+		historyApiFallback: true,
+		inline: true
 	},
 	module: {
 		rules: [
