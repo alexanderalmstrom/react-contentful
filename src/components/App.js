@@ -1,22 +1,56 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
+import { deliveryAccessToken, spaceId } from '../../config'
+import { initClient } from '../services/contentfulClient'
+import { connectComponent } from '../connect'
+
 import Home from './Home'
-import About from './About'
+import Post from './Post'
 
 import './App.scss'
 
 class App extends Component {
+	componentWillMount () {
+		initClient(spaceId, deliveryAccessToken).then(
+			() => this.props.setAppClientState('success'),
+			() => this.props.setAppClientState('error')
+		)
+	}
+
 	render () {
 		return (
-			<BrowserRouter>
-				<Switch>
-					<Route exact path="/" component={Home}></Route>
-					<Route path="/about" component={About}></Route>
-				</Switch>
-			</BrowserRouter>
+			<div>
+				{ (() => {
+					if (this.props.app.authState === 'success') {
+						return (
+							<BrowserRouter>
+								<Switch>
+									<Route exact path="/" component={Home}></Route>
+									<Route path="/:slug" component={Post}></Route>
+								</Switch>
+							</BrowserRouter>
+						)
+					}
+
+					if (this.props.app.authState === 'error') {
+						return (
+							<div>
+								<p>The connection to Contentful could not be established.</p>
+								<p>Please check your delivery access token and space id</p>
+							</div>
+						)
+					}
+				})() }
+			</div>
 		)
 	}
 }
 
-export default App
+App.propTypes = {
+	app: PropTypes.object,
+	setAppClientState: PropTypes.func
+}
+
+export default connectComponent(App)

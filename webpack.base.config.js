@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const env = process.env.NODE_ENV
 
@@ -41,6 +42,11 @@ const baseConfig = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
+		}),
+		new HtmlWebpackPlugin({
+			template: 'index.html',
+			filename: 'index.html',
+			inject: false
 		})
 	]
 }

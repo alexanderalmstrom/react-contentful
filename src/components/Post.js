@@ -4,18 +4,20 @@ import { Link } from 'react-router-dom'
 
 import { connectComponent } from '../connect'
 
-import Posts from './Posts'
+import './Post.scss'
 
-import './Home.scss'
+class Post extends Component {
+	componentWillMount () {
+		
+	}
 
-class Home extends Component {
 	render () {
 		return (
 			<div>
-				<Posts />
+				Post
 			</div>
 		)
 	}
 }
 
-export default connectComponent(Home)
+export default connectComponent(Post)

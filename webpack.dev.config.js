@@ -6,6 +6,8 @@ const baseConfig = require('./webpack.base.config.js')
 
 module.exports = merge(baseConfig, {
 	devServer: {
+		contentBase: path.resolve(process.cwd(), 'build'),
+		watchContentBase: true,
 		hot: true,
 		port: 3000,
 		historyApiFallback: true
