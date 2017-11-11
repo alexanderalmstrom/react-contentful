@@ -6,7 +6,7 @@ import './Home.scss'
 class Home extends Component {
 	render () {
 		return (
-			<div>
+			<div className="home">
 				<h1>Home</h1>
 				<Link to="/about">About</Link>
 			</div>

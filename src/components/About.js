@@ -6,7 +6,7 @@ import './About.scss'
 class About extends Component {
 	render () {
 		return (
-			<div>
+			<div className="about">
 				<h1>About</h1>
 				<Link to="/">Home</Link>
 			</div>
