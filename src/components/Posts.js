@@ -15,16 +15,18 @@ class Posts extends Component {
 
 	render () {
 		return (
-			<div>
-					{
-						Object.keys(this.props.posts.entries).map(slug => {
-							return (
-								<div key={slug}>
-									<Feature entry={this.props.posts.entries[slug]}></Feature>
-								</div>
-							)
-						})
-					}
+			<div className="container">
+				<div className="row">
+						{
+							Object.keys(this.props.posts.entries).map(slug => {
+								return (
+									<div key={slug} className="col-md-6">
+										<Feature entry={this.props.posts.entries[slug]}></Feature>
+									</div>
+								)
+							})
+						}
+				</div>
 			</div>
 		)
 	}

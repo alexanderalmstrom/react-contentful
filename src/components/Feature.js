@@ -17,7 +17,7 @@ function Feature ({ entry }) {
 		)
 	} else {
 		return (
-			<div>
+			<div className="container">
 				<p>Feature component was not found.</p>
 			</div>
 		)

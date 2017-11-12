@@ -19,7 +19,12 @@ module.exports = merge(baseConfig, {
 							loader: 'css-loader',
 						},
 						{
-							loader: 'sass-loader'
+							loader: 'sass-loader',
+							options: {
+								includePaths: [
+									path.resolve('./node_modules')
+								]
+							}
 						}
 					]
 				})

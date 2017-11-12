@@ -30,7 +30,10 @@ module.exports = merge(baseConfig, {
 					{
 						loader: 'sass-loader',
 						options: {
-							sourceMap: true
+							sourceMap: true,
+							includePaths: [
+								path.resolve('./node_modules')
+							]
 						}
 					}
 				]
