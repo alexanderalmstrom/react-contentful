@@ -21,7 +21,7 @@ class Post extends Component {
 						<div className="col-12">
 							<img src={post.fields.image.fields.file.url}
 								alt={post.fields.image.fields.title} />
-							<h1>{post.fields.name}</h1>
+							<h1>{post.fields.title || post.fields.name}</h1>
 							<p>{post.fields.description}</p>
 						</div>
 					</div>
