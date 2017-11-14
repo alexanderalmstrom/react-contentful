@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import { deliveryAccessToken, spaceId } from '../../config'
 import { initClient } from '../services/contentfulClient'
 import { connectComponent } from '../connect'
 
@@ -13,7 +12,7 @@ import './App.scss'
 
 class App extends Component {
 	componentWillMount () {
-		initClient(spaceId, deliveryAccessToken).then(
+		initClient().then(
 			() => this.props.setAppClientState('success'),
 			() => this.props.setAppClientState('error')
 		)

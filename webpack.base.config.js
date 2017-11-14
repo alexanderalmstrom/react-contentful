@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-
-const env = process.env.NODE_ENV
+const dotenv = require('dotenv-webpack')
 
 const baseConfig = {
 	entry: {
@@ -41,11 +40,12 @@ const baseConfig = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
-		})
-	]
+		}),
+		new dotenv()
+	],
 }
 
-if (env == 'development') {
+if (process.env.NODE_ENV == 'development') {
 	baseConfig.entry.app.unshift('react-hot-loader/patch')
 }
 

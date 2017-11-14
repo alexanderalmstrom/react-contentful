@@ -1,5 +1,4 @@
 import { makeReducer } from './util'
-import { postTypeId } from '../../config'
 
 export const app = makeReducer(function (action) {
 	switch (action.type) {

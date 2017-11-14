@@ -2,7 +2,7 @@
 
 ## Setup
 
-Rename `config.example.js` to `config.js` and add your own Contenful API credentials (Space ID and access token)
+Rename `.env.example` to `.env` and add your own Contenful API credentials (Delivery access token, Preview access token and Space ID).
 
 ## Installation
 
