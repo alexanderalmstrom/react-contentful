@@ -9,7 +9,7 @@ export const posts = makeReducer(function (action) {
 			return {
 				fetching: false,
 				entries: action.payload.reduce((collection, entry) => {
-					collection[ entry.fields.slug ] = entry
+					collection[ entry.sys.id ] = entry
 					return collection
 				}, {})
 			}
@@ -19,7 +19,7 @@ export const posts = makeReducer(function (action) {
 
 		case 'LOAD_POST_PENDING':
 			return {
-				entries: {
+				entry: {
 					[ action.meta.slug ]: {
 						fetching: true
 					}
@@ -30,19 +30,17 @@ export const posts = makeReducer(function (action) {
 			action.payload.fetching = false
 
 			return {
-				entries: {
+				entry: {
 					[ action.meta.slug ]: action.payload
 				}
 			}
 
 		case 'LOAD_POST_REJECTED':
 			return {
-				entries: {
-					[ action.meta.slug ]: {
-						error: true,
-						fetching: false
-					}
+				entry: {
+					error: true,
+					fetching: false
 				}
 			}
 	}
-}, { entries: [] })
+}, { entries: [], entry: [] })

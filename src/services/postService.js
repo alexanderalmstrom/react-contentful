@@ -3,7 +3,7 @@ import { getClient } from './contentfulClient'
 export function loadPosts () {
 	return getClient().getEntries({
 		'content_type': 'post',
-		'include': 2
+		'include': 1
 	}).then(payload => {
 		return payload.items
 	})

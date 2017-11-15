@@ -51,7 +51,7 @@ class Post extends Component {
 	}
 
 	render () {
-		const post = this.props.posts.entries[this.props.match.params.slug]
+		const post = this.props.posts.entry[this.props.match.params.slug]
 
 		return (
 			<article className="post">

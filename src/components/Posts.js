@@ -18,9 +18,9 @@ class Posts extends Component {
 			<div className="container">
 				<div className="row">
 						{
-							Object.keys(this.props.posts.entries).map(slug => {
+							Object.keys(this.props.posts.entries).map((slug, index) => {
 								return (
-									<div key={slug} className="col-md-6">
+									<div key={index} className="col-md-6">
 										<Feature entry={this.props.posts.entries[slug]}></Feature>
 									</div>
 								)
