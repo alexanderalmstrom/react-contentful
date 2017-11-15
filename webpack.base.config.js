@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const dotenv = require('dotenv-webpack')
 
 const baseConfig = {
 	entry: {
@@ -45,8 +44,7 @@ const baseConfig = {
 			'process.env': {
 				'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 			}
-		}),
-		new dotenv()
+		})
 	],
 }
 

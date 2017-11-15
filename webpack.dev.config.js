@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const DotenvPlugin = require('dotenv-webpack')
 
 const baseConfig = require('./webpack.base.config.js')
 
@@ -43,6 +44,7 @@ module.exports = merge(baseConfig, {
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin()
+		new webpack.NamedModulesPlugin(),
+		new DotenvPlugin()
 	]
 })
