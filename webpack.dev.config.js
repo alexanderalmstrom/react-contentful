@@ -6,7 +6,7 @@ const baseConfig = require('./webpack.base.config.js')
 
 module.exports = merge(baseConfig, {
 	devServer: {
-		contentBase: path.resolve(process.cwd(), 'build'),
+		contentBase: path.resolve(process.cwd(), 'public'),
 		watchContentBase: true,
 		hot: true,
 		port: 3000,

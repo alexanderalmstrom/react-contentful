@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.config.js",
-    "server": "node server.js",
+    "server": "node ./server",
     "deploy": "git push heroku master",
     "heroku-prebuild": "yarn install",
     "heroku-postbuild": "yarn run build"
@@ -30,6 +30,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.2.1",
+    "morgan": "^1.9.0",
     "node-sass": "^4.6.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",

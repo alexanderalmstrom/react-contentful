@@ -32,7 +32,7 @@ module.exports = merge(baseConfig, {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['build']),
+		new CleanWebpackPlugin(['public']),
 		new ExtractTextPlugin({
 			filename: '[name].css'
 		}),
