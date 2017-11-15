@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.config.js",
+    "build": "webpack -p --config webpack.prod.config.js",
     "server": "node ./server",
     "deploy": "git push heroku master",
     "heroku-prebuild": "yarn install",
