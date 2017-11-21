@@ -12,7 +12,8 @@ module.exports = merge(baseConfig, {
 		hot: true,
 		port: 3000,
 		historyApiFallback: true,
-		inline: true
+		inline: true,
+		open: true
 	},
 	module: {
 		rules: [
