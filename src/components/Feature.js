@@ -7,13 +7,13 @@ import './Feature.scss'
 function Feature ({ entry }) {
 	if (entry && entry.fields && entry.fields.image) {
 		return (
-			<div className="feature">
+			<article className="col-md-6 feature">
 				<Link to={`/${entry.fields.slug}`}>
 					<img src={entry.fields.image.fields.file.url}
 						alt={entry.fields.image.fields.title} />
 					<h2 className="h6">{entry.fields.name}</h2>
 				</Link>
-			</div>
+			</article>
 		)
 	} else {
 		return (

@@ -1,9 +1,14 @@
+@import 'bourbon/app/assets/stylesheets/bourbon';
 @import 'bootstrap/scss/normalize';
 @import 'bootstrap/scss/bootstrap-grid';
 
+@include font-face("Marcel", "/fonts/Marcel-Regular", 400, $file-formats: woff2 woff);
+@include font-face("Marcel", "/fonts/Marcel-Medium", 600, $file-formats: woff2 woff);
+@include font-face("Marcel", "/fonts/Marcel-Bold", 700, $file-formats: woff2 woff);
+
 body {
 	margin: 0;
-	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-family: "Marcel", "Helvetica Neue", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

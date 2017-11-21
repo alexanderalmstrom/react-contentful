@@ -4,6 +4,7 @@ const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const baseConfig = require('./webpack.base.config.js')
 
@@ -46,10 +47,14 @@ module.exports = merge(baseConfig, {
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: 'index.html',
+			template: './src/index.html',
 			filename: 'index.html',
 			inject: false,
 			hash: true
-		})
+		}),
+		new CopyWebpackPlugin([{
+			from: './src/fonts',
+			to: 'fonts'
+		}])
 	]
 })

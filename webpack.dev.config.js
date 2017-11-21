@@ -1,13 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const DotenvPlugin = require('dotenv-webpack')
 
 const baseConfig = require('./webpack.base.config.js')
 
 module.exports = merge(baseConfig, {
 	devServer: {
-		contentBase: path.resolve(process.cwd(), 'public'),
+		contentBase: path.resolve(process.cwd(), 'src'),
 		watchContentBase: true,
 		hot: true,
 		port: 3000,
@@ -45,7 +44,6 @@ module.exports = merge(baseConfig, {
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin(),
-		new DotenvPlugin()
+		new webpack.NamedModulesPlugin()
 	]
 })
